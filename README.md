@@ -1,4 +1,6 @@
 teaching
 ========
 
-Collection of code used for teaching Clean Code using CodeSmell examples and design patterns, including some DDD tactical patterns.
+Collection of code used for teaching 
+- Clean Code using CodeSmell examples 
+- Design patterns, including some DDD tactical patterns.
