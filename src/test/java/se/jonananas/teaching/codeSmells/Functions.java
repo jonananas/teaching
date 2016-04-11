@@ -92,7 +92,7 @@ public class Functions {
 	 * F4/G9
 	 * Dead code
 	 */
-	private int calcNumberOfLegs() {
+	public int calcNumberOfLegs() {
 		try {
 			boolean makeItThree = false;
 			int result = 0;
