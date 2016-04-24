@@ -8,7 +8,18 @@ import java.util.List;
 import org.junit.Test;
 
 public class HusFactoryTest {
+	Kök kök = new Kök();
+	Sovrum sovrum = new Sovrum();
+	Toalett toalett = new Toalett();
 	
+	@Test
+	public void shouldCreateEttRumOchKök() throws Exception {
+
+		Hus hus = Hus.createEttRumOchKök(sovrum, kök, toalett);
+		
+		assertThat(hus.rum()).containsOnly(kök, sovrum, toalett);
+	}
+
 	public static class Hus {
 		private List<Rum> rum = new ArrayList<Rum>();
 
@@ -24,7 +35,7 @@ public class HusFactoryTest {
 			return this.rum.size();
 		}
 
-		public static Hus createWithRum(Rum vardagsrum, Rum kök, Rum toalett) {
+		public static Hus createEttRumOchKök(Rum vardagsrum, Rum kök, Rum toalett) {
 			Hus hus = new Hus();
 			hus.add(vardagsrum);
 			hus.add(kök);
@@ -36,19 +47,12 @@ public class HusFactoryTest {
 	public class Rum {
 	}
 
-	public class Vardagsrum extends Rum {
+	public class Sovrum extends Rum {
 	}
 	
 	public class Kök extends Rum {
 	}
 	
 	public class Toalett extends Rum {
-	}
-	
-	@Test
-	public void shouldContainRum() throws Exception {
-		Hus hus = Hus.createWithRum(new Vardagsrum(), new Kök(), new Toalett());
-		
-		assertThat(hus.antalRum()).isEqualTo(3);
 	}
 }

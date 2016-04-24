@@ -13,7 +13,7 @@ public class Hus {
 	}
 
 	public List<Rum> rum() {
-		return rum ;
+		return rum;
 	}
 
 	public void add(Rum rum) {
