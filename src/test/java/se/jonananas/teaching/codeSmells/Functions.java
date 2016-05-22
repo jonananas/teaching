@@ -1,10 +1,25 @@
 package se.jonananas.teaching.codeSmells;
 
 public class Functions {
+	
+	abstract class Address {
+		public abstract String address();
+		public abstract String apartment();
+		public abstract String zip();
+		public abstract String city();
+	}
 
-	class AdressLabel {
+	static class AddressLabel {
 
 		public String label;
+
+		public AddressLabel(String label) {
+			this.label = label;
+		}
+
+		public static AddressLabel fromString(String label) {
+			return new AddressLabel(label);
+		}
 	}
 
 	private void renderTest() {
@@ -29,7 +44,9 @@ public class Functions {
 	public String createAdressLabel(String address, String apartment, String zip, String city) {
 		return address + " " + apartment + "\n" + zip + city;
 	}
-
+	
+	
+	
 	
 	
 	
@@ -46,12 +63,28 @@ public class Functions {
 	 * Output arguments
 	 */
 
-	public void createAdressLabel(AdressLabel label, String address, String apartment, String zip, String city) {
-		label.label = address + " " + apartment + "\n" + zip + city;
+	public void createAdressLabel(AddressLabel label, Address address) {
+		label.label = address.address() + " " + address.apartment() + "\n" + address.zip() + address.city();
 	}
 
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * Bättre?
+	 */
+	public AddressLabel createAdressLabel(Address address) {
+		return AddressLabel.fromString(address.address() + " " + address.apartment() + "\n" + address.zip() + address.city());
+	}
+
 	
 	
 	
