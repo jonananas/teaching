@@ -105,7 +105,8 @@ public class Comments {
 	 */
 
 	public SellResponse createSellResponse() {
-//		int i = 0;
+// Removed by Johan 2016-06-10 JIRA-asdlfkjaslöf
+		//		int i = 0;
 //		i++;  
 		
 		return new SellResponse(0);

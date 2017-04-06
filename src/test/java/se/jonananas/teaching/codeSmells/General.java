@@ -77,7 +77,7 @@ public class General {
 	@Test
 	@Ignore
 	public void shouldReturnEmptyStringOnUnknownEntity() {
-		
+		// There is a lot of code here...
 	}
 	
 	
@@ -145,6 +145,23 @@ public class General {
 	
 	public static class ProductOption {
 		public enum OptionCode {delivermethod, coords, deviceID}
+		public static String validateText(ProductOption.OptionCode optionCode, String text) {
+			switch (optionCode) {
+			case coords:
+				if (!Coords.validCoords(text))
+					throw new IllegalArgumentException();
+				break;
+			case deviceID:
+				if (!text.matches("\\d{10}"))
+					throw new IllegalArgumentException();
+				break;
+			default:
+				if (text.length() > 255)
+					throw new IllegalArgumentException("Invalid text: " + text);
+				break;
+			}
+			return text;
+		}
 	}
 	
 	public static class Coords {
@@ -153,23 +170,6 @@ public class General {
 		}
 	}
 	
-	public static String validateText(ProductOption.OptionCode optionCode, String text) {
-		switch (optionCode) {
-		case coords:
-			if (!Coords.validCoords(text))
-				throw new IllegalArgumentException();
-			break;
-		case deviceID:
-			if (!text.matches("\\d{10}"))
-				throw new IllegalArgumentException();
-			break;
-		default:
-			if (text.length() > 255)
-				throw new IllegalArgumentException("Invalid text: " + text);
-			break;
-		}
-		return text;
-	}
 	
 	
 	// Better?

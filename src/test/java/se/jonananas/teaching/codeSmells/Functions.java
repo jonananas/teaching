@@ -3,7 +3,7 @@ package se.jonananas.teaching.codeSmells;
 public class Functions {
 	
 	abstract class Address {
-		public abstract String address();
+		public abstract String street();
 		public abstract String apartment();
 		public abstract String zip();
 		public abstract String city();
@@ -64,7 +64,7 @@ public class Functions {
 	 */
 
 	public void createAdressLabel(AddressLabel label, Address address) {
-		label.label = address.address() + " " + address.apartment() + "\n" + address.zip() + address.city();
+		label.label = address.street() + " " + address.apartment() + "\n" + address.zip() + address.city();
 	}
 
 	
@@ -82,7 +82,7 @@ public class Functions {
 	 * Bättre?
 	 */
 	public AddressLabel createAdressLabel(Address address) {
-		return AddressLabel.fromString(address.address() + " " + address.apartment() + "\n" + address.zip() + address.city());
+		return AddressLabel.fromString(address.street() + " " + address.apartment() + "\n" + address.zip() + address.city());
 	}
 
 	

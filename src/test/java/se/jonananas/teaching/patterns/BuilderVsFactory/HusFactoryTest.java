@@ -26,7 +26,7 @@ public class HusFactoryTest {
 		
 		Hus hus = Hus.createTvåRumOchKök(vardagsrum, sovrum, kök, toalett);
 		
-		assertThat(hus.rum()).containsOnly(kök, sovrum, toalett);
+		assertThat(hus.rum()).containsOnly(vardagsrum, kök, sovrum, toalett);
 	}
 	
 	public static class Hus {
