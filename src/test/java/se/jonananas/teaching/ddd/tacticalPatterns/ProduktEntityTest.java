@@ -22,20 +22,13 @@ public class ProduktEntityTest {
 	}
 
 	@Test
-	public void shouldBeEqualOnlyToItself() throws Exception {
-		Produkt other = Produkt.createFromName("Gräsklippare");
-		
-		Produkt same = gräsklippare;
-
-		assertThat(same).isEqualTo(gräsklippare)
-				.isNotEqualTo(other)
-				.isNotEqualTo(null)
-				.isNotEqualTo(new Object());
-	}
-	
-	@Test
 	public void shouldSetName() throws Exception {
 		gräsklippare.setName("Grusklippare");
 		assertThat(gräsklippare.getName()).isEqualTo("Grusklippare");
+	}
+	
+	@Test
+	public void shouldBeAnEntity() {
+		assertThat(gräsklippare).isInstanceOf(Entity.class);
 	}
 }
