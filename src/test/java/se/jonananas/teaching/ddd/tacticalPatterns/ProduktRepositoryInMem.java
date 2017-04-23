@@ -1,15 +1,14 @@
 package se.jonananas.teaching.ddd.tacticalPatterns;
 
+import java.util.HashMap;
 import java.util.Map;
-
-import com.google.common.collect.Maps;
 
 public class ProduktRepositoryInMem implements ProduktRepository {
 
 	private Map<String, Produkt> produkts;
 	
 	private ProduktRepositoryInMem() {
-		produkts = Maps.newHashMap();
+		produkts = new HashMap<>();
 	}
 
 	@Override
