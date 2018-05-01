@@ -18,9 +18,25 @@ public class HusBuilderTest {
 				.medToalett(toalett)
 				.build();
 
-		assertThat(hus.rum()).containsOnly(kök, sovrum, toalett);
+		assertThat(hus.rum()).containsExactly(kök, sovrum, toalett);
 	}
-	
+
+	@Test
+	public void shouldCreateTvåRumOchKök() throws Exception {
+
+		final Sovrum sovrum2 = new Sovrum();
+
+		Hus hus = Hus.builder()
+				.medKök(kök)
+				.medSovrum(this.sovrum)
+				.medSovrum(sovrum2)
+				.medToalett(toalett)
+				.build();
+
+		assertThat(hus.rum()).containsExactly(kök, sovrum, sovrum2, toalett);
+	}
+
+
 	public static class Rum {
 	}
 

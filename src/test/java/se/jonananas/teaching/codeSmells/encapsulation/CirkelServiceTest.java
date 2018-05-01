@@ -16,16 +16,34 @@ public class CirkelServiceTest {
 
 		private double r;
 
-		public Cirkel(double r) {
-			this.r = r;
-		}
-
-		public static Cirkel medRadie(double r) {
-			return new Cirkel(r);
+		private Cirkel(Builder builder) {
+			this.r = builder.r;
 		}
 
 		public double radie() {
 			return r;
+		}
+		
+		public static Builder builder() {
+			return new Builder();
+		}
+		
+		public static class Builder {
+			private double r;
+
+			public Builder medRadie(double radie) {
+				this.r = radie;
+				return this;
+			}
+
+			public Builder färg(int gRÖN) {
+				return this;
+			}
+
+			public Cirkel build() {
+				return new Cirkel(this);
+			}
+			
 		}
 	}
 	
@@ -39,7 +57,9 @@ public class CirkelServiceTest {
 	
 	@Test
 	public void skaBeräknaArea() throws Exception {
-		Cirkel cirkel = Cirkel.medRadie(3);
+		final int GRÖN = 1; 
+		Cirkel cirkel = Cirkel.builder().medRadie(3).färg(GRÖN).build();
+		Cirkel cirkel2 = Cirkel.builder().medRadie(3).build();
 		
 		assertThat(new CirkelService().areaAv(cirkel)).isEqualTo(6 * PI);
 	}

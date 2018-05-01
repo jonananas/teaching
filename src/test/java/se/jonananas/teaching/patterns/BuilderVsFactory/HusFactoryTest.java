@@ -7,6 +7,9 @@ import java.util.List;
 
 import org.junit.Test;
 
+/*
+ * Example of how factory methods might not be enough to clarify creation
+ */
 public class HusFactoryTest {
 	Kök kök = new Kök();
 	Sovrum sovrum = new Sovrum();
@@ -28,14 +31,35 @@ public class HusFactoryTest {
 		
 		assertThat(hus.rum()).containsOnly(vardagsrum, kök, sovrum, toalett);
 	}
-	
+
+	/*
+	 * We have two static method factories, and one that takes 4 parameters. That's two reasons to consider a Builder instead.
+	 */
 	public static class Hus {
+
 		private List<Rum> rum = new ArrayList<Rum>();
+
+		private Hus(){
+		}
 
 		public List<Rum> rum() {
 			return rum ;
 		}
 
+		/*
+		 * Static method factory
+		 */
+		public static Hus createEttRumOchKök(Rum vardagsrum, Rum kök, Rum toalett) {
+			Hus hus = new Hus();
+			hus.add(vardagsrum);
+			hus.add(kök);
+			hus.add(toalett);
+			return hus;
+		}
+
+		/*
+		 * Static method factory, but with too many parameters - prefer builder to this!
+		 */
 		public static Hus createTvåRumOchKök(Vardagsrum vardagsrum, Sovrum sovrum, Kök kök, Toalett toalett) {
 			Hus hus = new Hus();
 			hus.add(vardagsrum);
@@ -53,13 +77,6 @@ public class HusFactoryTest {
 			return this.rum.size();
 		}
 
-		public static Hus createEttRumOchKök(Rum vardagsrum, Rum kök, Rum toalett) {
-			Hus hus = new Hus();
-			hus.add(vardagsrum);
-			hus.add(kök);
-			hus.add(toalett);
-			return hus;
-		}
 	}
 
 	public class Rum {
