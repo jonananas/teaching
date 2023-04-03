@@ -3,8 +3,6 @@ package se.jonananas.teaching.patterns.BuilderVsFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.jonananas.teaching.patterns.BuilderVsFactory.HusBuilderTest.Rum;
-
 public class Hus {
 	private List<Rum> rum = new ArrayList<Rum>();
 
@@ -28,21 +26,37 @@ public class Hus {
 		return new HusBuilder();
 	}
 
+    public static class Rum {
+	}
+
+	public static class Vardagsrum extends Rum {
+	}
+	
+	public static class Sovrum extends Rum {
+	}
+
+	public static class Kök extends Rum {
+	}
+
+	public static class Toalett extends Rum {
+	}
+
+
 	public static class HusBuilder {
 
         private List<Rum> rum = new ArrayList<Rum>();
 
-        public HusBuilder medKök(HusBuilderTest.Kök kök) {
+        public HusBuilder medKök(Kök kök) {
             rum.add(kök);
             return this;
         }
 
-        public HusBuilder medVardagsrum(HusBuilderTest.Vardagsrum vardagsrum) {
+        public HusBuilder medVardagsrum(Vardagsrum vardagsrum) {
             rum.add(vardagsrum);
             return this;
         }
 
-        public HusBuilder medToalett(HusBuilderTest.Toalett toalett) {
+        public HusBuilder medToalett(Toalett toalett) {
             rum.add(toalett);
             return this;
         }
@@ -51,7 +65,7 @@ public class Hus {
             return new Hus(this);
         }
 
-        public HusBuilder medSovrum(HusBuilderTest.Sovrum sovrum) {
+        public HusBuilder medSovrum(Sovrum sovrum) {
             rum.add(sovrum);
             return this;
         }

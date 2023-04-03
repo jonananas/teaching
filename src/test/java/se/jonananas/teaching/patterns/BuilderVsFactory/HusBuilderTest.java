@@ -4,6 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
+import se.jonananas.teaching.patterns.BuilderVsFactory.Hus.Kök;
+import se.jonananas.teaching.patterns.BuilderVsFactory.Hus.Sovrum;
+import se.jonananas.teaching.patterns.BuilderVsFactory.Hus.Toalett;
+
 public class HusBuilderTest {
 	Kök kök = new Kök();
 	Sovrum sovrum = new Sovrum();
@@ -34,21 +38,5 @@ public class HusBuilderTest {
 				.build();
 
 		assertThat(hus.rum()).containsExactly(kök, sovrum, sovrum2, toalett);
-	}
-
-
-	public static class Rum {
-	}
-
-	public static class Vardagsrum extends Rum {
-	}
-	
-	public static class Sovrum extends Rum {
-	}
-
-	public static class Kök extends Rum {
-	}
-
-	public static class Toalett extends Rum {
 	}
 }
