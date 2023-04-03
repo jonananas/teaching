@@ -69,7 +69,7 @@ public class HusFactoryTest {
 			return hus;
 		}
 
-		public void add(Rum rum) {
+		private void add(Rum rum) {
 			this.rum.add(rum);
 		}
 
