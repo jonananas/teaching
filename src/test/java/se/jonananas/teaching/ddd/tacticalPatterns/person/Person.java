@@ -1,4 +1,6 @@
-package se.jonananas.teaching.ddd.tacticalPatterns;
+package se.jonananas.teaching.ddd.tacticalPatterns.person;
+
+import se.jonananas.teaching.ddd.tacticalPatterns.patterns.Entity;
 
 public class Person extends Entity {
 

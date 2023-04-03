@@ -1,4 +1,6 @@
-package se.jonananas.teaching.ddd.tacticalPatterns;
+package se.jonananas.teaching.ddd.tacticalPatterns.produkt;
+
+import se.jonananas.teaching.ddd.tacticalPatterns.patterns.Entity;
 
 public class Produkt extends Entity {
 	private static final long serialVersionUID = 1L;

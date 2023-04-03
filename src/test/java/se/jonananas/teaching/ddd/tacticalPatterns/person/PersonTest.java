@@ -1,11 +1,11 @@
-package se.jonananas.teaching.ddd.tacticalPatterns;
+package se.jonananas.teaching.ddd.tacticalPatterns.person;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class PersonAggregateTest {
+public class PersonTest {
 
 	private Person person;
 	private Adress adress;

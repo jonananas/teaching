@@ -1,4 +1,4 @@
-package se.jonananas.teaching.ddd.tacticalPatterns;
+package se.jonananas.teaching.ddd.tacticalPatterns.patterns;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

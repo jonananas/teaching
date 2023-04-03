@@ -1,10 +1,10 @@
-package se.jonananas.teaching.ddd.tacticalPatterns;
+package se.jonananas.teaching.ddd.tacticalPatterns.person;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
-public class AdressValueObjectTest {
+public class AdressTest {
 
 	@Test
 	public void shouldCreateAdress() throws Exception {

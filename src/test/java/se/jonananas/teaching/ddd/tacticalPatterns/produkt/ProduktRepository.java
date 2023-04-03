@@ -1,4 +1,4 @@
-package se.jonananas.teaching.ddd.tacticalPatterns;
+package se.jonananas.teaching.ddd.tacticalPatterns.produkt;
 
 public interface ProduktRepository {
 
