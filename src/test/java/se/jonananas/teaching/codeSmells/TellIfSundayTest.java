@@ -1,8 +1,6 @@
 package se.jonananas.teaching.codeSmells;
-
-import java.util.Calendar;
-import java.util.Date;
-
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,11 +8,14 @@ public class TellIfSundayTest {
 
 	public static class TellIfSunday {
 
+		private LocalDate now;
+
+		TellIfSunday() {
+			this.now = LocalDate.now();
+		}
+
 		public boolean isSunday() {
-			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(new Date());
-			int weekday = calendar.get(Calendar.DAY_OF_WEEK);
-			return weekday == Calendar.SUNDAY;
+			return now.getDayOfWeek() == DayOfWeek.SUNDAY;
 		}
 	}
 
