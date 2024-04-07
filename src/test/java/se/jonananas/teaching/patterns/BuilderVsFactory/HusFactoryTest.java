@@ -15,20 +15,20 @@ public class HusFactoryTest {
 	Sovrum sovrum = new Sovrum();
 	Toalett toalett = new Toalett();
 	Vardagsrum vardagsrum = new Vardagsrum();
-	
+
 	@Test
 	public void shouldCreateEttRumOchKök() throws Exception {
 
 		Hus hus = Hus.createEttRumOchKök(sovrum, kök, toalett);
-		
+
 		assertThat(hus.rum()).containsOnly(kök, sovrum, toalett);
 	}
 
 	@Test
 	public void shouldCreateTvåRumOchKök() throws Exception {
-		
+
 		Hus hus = Hus.createTvåRumOchKök(vardagsrum, sovrum, kök, toalett);
-		
+
 		assertThat(hus.rum()).containsOnly(vardagsrum, kök, sovrum, toalett);
 	}
 
@@ -84,13 +84,13 @@ public class HusFactoryTest {
 
 	public class Sovrum extends Rum {
 	}
-	
+
 	public class Kök extends Rum {
 	}
-	
+
 	public class Toalett extends Rum {
 	}
-	
+
 	public class Vardagsrum extends Rum {
 	}
 }

@@ -12,7 +12,7 @@ public class HusBuilderTest {
 	Kök kök = new Kök();
 	Sovrum sovrum = new Sovrum();
 	Toalett toalett = new Toalett();
-	
+
 	@Test
 	public void shouldCreateEttRumOchKök() throws Exception {
 

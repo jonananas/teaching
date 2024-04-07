@@ -31,7 +31,7 @@ public class Hus {
 
 	public static class Vardagsrum extends Rum {
 	}
-	
+
 	public static class Sovrum extends Rum {
 	}
 
@@ -61,13 +61,13 @@ public class Hus {
             return this;
         }
 
-        public Hus build() {
-            return new Hus(this);
-        }
+		public HusBuilder medSovrum(Sovrum sovrum) {
+			rum.add(sovrum);
+			return this;
+		}
 
-        public HusBuilder medSovrum(Sovrum sovrum) {
-            rum.add(sovrum);
-            return this;
+		public Hus build() {
+            return new Hus(this);
         }
     }
 }
