@@ -8,32 +8,32 @@ public class General {
 	private String querySingleResult(String sql) {
 		return null;
 	}
-	
+
 	class Person {
 
 		public boolean isTall() {
 			return false;
 		}
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
 	/*
 	 * G1
 	 * Multiple languages in one source file
 	 * @see address_book_process.php
 	 */
-	
+
 	public String numberOfOrdersAsHtml() {
 		String sql = "SELECT count(*) from Orders o";
 		String numberOfOrders = querySingleResult(sql);
@@ -41,33 +41,33 @@ public class General {
 		html+= "<strong>Number of orders: " + numberOfOrders + "</strong>";
 		return html;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/*
 	 * G3
 	 * Incorrect behavior at boundaries
 	 * Don't be lazy! Write test for it!
 	 */
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 	/*
 	 * G4
 	 * Overridden safeties
@@ -77,43 +77,43 @@ public class General {
 	@Test
 	@Ignore
 	public void shouldReturnEmptyStringOnUnknownEntity() {
-		// There is a lot of code here...
+		// Pretend there are some code here!
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
 	/*
 	 * G5
 	 * Duplication
 	 */
-	
+
 	/*
 	 * G7
 	 *  Base Classes Depending on their derivatives
 	 */
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/*
 	 * G29
 	 * Avoid negative conditionals
@@ -125,16 +125,16 @@ public class General {
 			return "Person is tall";
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
 	/*
 	 * G23
 	 * Prefer Polymorphism to If/Else or Switch/Case
@@ -142,7 +142,7 @@ public class General {
 	 * The cases in that switch statement must create polymorphic objects that take the place of other such switch
 	 * statements in the rest of the system.
 	 */
-	
+
 	public static class ProductOption {
 		public enum OptionCode {delivermethod, coords, deviceID}
 		public static String validateText(ProductOption.OptionCode optionCode, String text) {
@@ -163,15 +163,15 @@ public class General {
 			return text;
 		}
 	}
-	
+
 	public static class Coords {
 		public static boolean validCoords(String text) {
 			return false;
 		}
 	}
-	
-	
-	
+
+
+
 	// Better?
 	public static abstract class ProductOption2 {
 		public abstract boolean isValidText(String text);
