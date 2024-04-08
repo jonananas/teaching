@@ -46,6 +46,12 @@ public class HusFactoryTest {
 			return rum ;
 		}
 
+
+
+
+
+
+
 		/*
 		 * Static method factory
 		 */
@@ -56,6 +62,14 @@ public class HusFactoryTest {
 			hus.add(toalett);
 			return hus;
 		}
+
+
+
+
+
+
+
+
 
 		/*
 		 * Static method factory, but with too many parameters - prefer builder to this!
